@@ -51,14 +51,19 @@ export const msalConfig = {
  * For more information about OIDC scopes, visit: 
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
  */
-export const loginRequest = {
-    scopes: ["User.Read"]
+export const msalLoginRequest = {
+    scopes: ["User.Read", "files.readwrite", "offline_access"]
 };
 
 /**
  * Add here the scopes to request when obtaining an access token for MS Graph API. For more information, see:
  * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/resources-and-scopes.md
  */
-export const graphConfig = {
+export const msalGraphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me"
+};
+
+export const msalOneDrive = {
+    getDrive: "https://graph.microsoft.com/v1.0/me/drive",
+    listRoot: "https://graph.microsoft.com/v1.0/me/drive/root/children"
 };
